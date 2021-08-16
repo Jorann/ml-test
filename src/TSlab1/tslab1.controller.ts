@@ -7,6 +7,6 @@ export class TSLab1Controller {
 
   @Get()
   async getHello(): Promise<string> {
-    return this.labService.getTestString();
+    return this.labService.get31();
   }
 }
