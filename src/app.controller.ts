@@ -11,6 +11,6 @@ export class AppController {
 
   @Get()
   async getHello(): Promise<string> {
-    return this.tsLab1Service.minMaxNorm();
+    return this.tsLab1Service.csvStuff();
   }
 }

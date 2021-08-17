@@ -44,4 +44,17 @@ export class TSLab1Service {
     calced.print();
     return JSON.stringify(calced.dataSync());
   }
+
+  async csvStuff(): Promise<string> {
+    const data = await tf.data.csv('https://joran.org/data.csv');
+
+    const points = data.map(
+      (record: { sqft_living: number; price: number }) => ({
+        x: record.sqft_living,
+        y: record.price,
+      }),
+    );
+
+    return JSON.stringify(await points.take(10).toArray());
+  }
 }
